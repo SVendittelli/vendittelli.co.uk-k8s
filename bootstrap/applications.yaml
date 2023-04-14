@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: url-shortener
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: url-shortener
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/SVendittelli/vendittelli.co.uk-k8s.git
+    targetRevision: HEAD
+    path: url-shortener
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: development
+  syncPolicy:
+    automated:
+      prune: true
