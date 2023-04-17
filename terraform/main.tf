@@ -1,7 +1,7 @@
 /**
  * # Personal Website Kubernetes Manifests
  *
- * The manifests for resources inside the kuberenetes cluster for my personal website.
+ * The manifests for resources inside the kubernetes cluster for my personal website.
  */
 
 terraform {

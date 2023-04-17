@@ -1,7 +1,7 @@
 <!-- BEGIN_TF_DOCS -->
 # Personal Website Kubernetes Manifests
 
-The manifests for resources inside the kuberenetes cluster for my personal website.
+The manifests for resources inside the kubernetes cluster for my personal website.
 
 ## Requirements
 
@@ -33,5 +33,5 @@ The manifests for resources inside the kuberenetes cluster for my personal websi
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| tfe\_token | The access token for terraform cloud | `string` | n/a | yes |
+| tfe\_token | The access token for Terraform Cloud | `string` | n/a | yes |
 <!-- END_TF_DOCS -->
