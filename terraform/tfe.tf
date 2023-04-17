@@ -3,19 +3,9 @@ data "tfe_outputs" "vendittelli" {
   workspace    = "vendittelli"
 }
 
-# resource "null_resource" "always_run" {
-#   triggers = {
-#     timestamp = "${timestamp()}"
-#   }
-# }
-
-resource "local_sensitive_file" "kubeconfig" {
-  content_base64 = data.tfe_outputs.vendittelli.values.kubeconfig
-  filename       = "kube_config.yaml"
-
-  # lifecycle {
-  #   replace_triggered_by = [
-  #     null_resource.always_run
-  #   ]
-  # }
+locals {
+  kubeconfig             = yamldecode(base64decode(data.tfe_outputs.vendittelli.values.kubeconfig))
+  host                   = local.kubeconfig.clusters[0].cluster.server
+  token                  = local.kubeconfig.users[0].user.token
+  cluster_ca_certificate = base64decode(local.kubeconfig.clusters[0].cluster.certificate-authority-data)
 }

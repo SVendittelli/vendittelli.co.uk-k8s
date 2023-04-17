@@ -1,13 +1,3 @@
-# resource "kubernetes_namespace" "argocd" {
-#   metadata {
-#     name = "argocd"
-#   }
-
-#   depends_on = [
-#     local_sensitive_file.kubeconfig
-#   ]
-# }
-
 resource "helm_release" "argocd" {
   name = "argocd"
 
@@ -17,10 +7,6 @@ resource "helm_release" "argocd" {
 
   namespace        = "argocd"
   create_namespace = true
-
-  # depends_on = [
-  #   kubernetes_namespace.argocd
-  # ]
 }
 
 # resource "kubernetes_manifest" "root" {

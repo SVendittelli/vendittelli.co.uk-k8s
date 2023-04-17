@@ -16,14 +16,6 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = "2.19.0"
     }
-    local = {
-      source  = "hashicorp/local"
-      version = "2.4.0"
-    }
-    null = {
-      source  = "hashicorp/null"
-      version = "3.2.1"
-    }
     tfe = {
       source  = "hashicorp/tfe"
       version = "0.43.0"
@@ -33,20 +25,21 @@ terraform {
 
 provider "helm" {
   kubernetes {
-    config_path = local_sensitive_file.kubeconfig.filename
+    host                   = local.host
+    token                  = local.token
+    cluster_ca_certificate = local.cluster_ca_certificate
   }
 }
 
 provider "kubernetes" {
-  config_path = local_sensitive_file.kubeconfig.filename
+  host                   = local.host
+  token                  = local.token
+  cluster_ca_certificate = local.cluster_ca_certificate
 
   # Enable manifest_resource to allow for directly applying a manifest file
   experiments {
     manifest_resource = true
   }
-}
-
-provider "null" {
 }
 
 provider "tfe" {
