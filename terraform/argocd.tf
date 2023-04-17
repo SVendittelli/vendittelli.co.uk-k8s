@@ -9,10 +9,10 @@ resource "helm_release" "argocd" {
   create_namespace = true
 }
 
-# resource "kubernetes_manifest" "root" {
-#   manifest = yamldecode(file("manifest.yaml"))
+resource "kubernetes_manifest" "root" {
+  manifest = yamldecode(file("manifest.yaml"))
 
-#   depends_on = [
-#     helm_release.argocd
-#   ]
-# }
+  depends_on = [
+    helm_release.argocd
+  ]
+}

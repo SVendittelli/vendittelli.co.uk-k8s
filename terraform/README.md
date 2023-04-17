@@ -10,8 +10,6 @@ The manifests for resources inside the kubernetes cluster for my personal websit
 | terraform | 1.4.5 |
 | helm | 2.9.0 |
 | kubernetes | 2.19.0 |
-| local | 2.4.0 |
-| null | 3.2.1 |
 | tfe | 0.43.0 |
 
 ## Providers
@@ -19,7 +17,7 @@ The manifests for resources inside the kubernetes cluster for my personal websit
 | Name | Version |
 |------|---------|
 | helm | 2.9.0 |
-| local | 2.4.0 |
+| kubernetes | 2.19.0 |
 | tfe | 0.43.0 |
 
 ## Resources
@@ -27,7 +25,7 @@ The manifests for resources inside the kubernetes cluster for my personal websit
 | Name | Type |
 |------|------|
 | [helm_release.argocd](https://registry.terraform.io/providers/hashicorp/helm/2.9.0/docs/resources/release) | resource |
-| [local_sensitive_file.kubeconfig](https://registry.terraform.io/providers/hashicorp/local/2.4.0/docs/resources/sensitive_file) | resource |
+| [kubernetes_manifest.root](https://registry.terraform.io/providers/hashicorp/kubernetes/2.19.0/docs/resources/manifest) | resource |
 | [tfe_outputs.vendittelli](https://registry.terraform.io/providers/hashicorp/tfe/0.43.0/docs/data-sources/outputs) | data source |
 
 ## Inputs
