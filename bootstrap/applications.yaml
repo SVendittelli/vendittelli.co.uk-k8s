@@ -15,7 +15,7 @@ spec:
     path: url-shortener
   destination:
     server: https://kubernetes.default.svc
-    namespace: development
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
