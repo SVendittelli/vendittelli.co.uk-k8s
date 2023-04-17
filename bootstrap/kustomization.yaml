@@ -4,3 +4,4 @@ kind: Kustomization
 resources:
   - applications.yaml
   - namespaces.yaml
+  - sealed-secrets.yaml
