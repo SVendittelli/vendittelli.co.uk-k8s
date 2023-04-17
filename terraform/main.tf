@@ -20,6 +20,10 @@ terraform {
       source  = "hashicorp/local"
       version = "2.4.0"
     }
+    null = {
+      source  = "hashicorp/null"
+      version = "3.2.1"
+    }
     tfe = {
       source  = "hashicorp/tfe"
       version = "0.43.0"
@@ -36,10 +40,13 @@ provider "helm" {
 provider "kubernetes" {
   config_path = local_sensitive_file.kubeconfig.filename
 
-  // Enable manifest_resource to allow for directly applying a manifest file
+  # Enable manifest_resource to allow for directly applying a manifest file
   experiments {
     manifest_resource = true
   }
+}
+
+provider "null" {
 }
 
 provider "tfe" {
