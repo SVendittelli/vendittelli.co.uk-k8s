@@ -14,6 +14,9 @@ spec:
       containers:
         - name: nom-de-plume
           image: vendittelli/nom-de-plume:1.2.0
+          envFrom:
+            - secretRef:
+                name: nom-de-plume
           resources:
             limits:
               memory: "128Mi"
