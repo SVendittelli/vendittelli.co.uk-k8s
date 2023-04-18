@@ -1,6 +1,28 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
+  name: nom-de-plume
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    name: nom-de-plume
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/SVendittelli/vendittelli.co.uk-k8s.git
+    targetRevision: HEAD
+    path: nom-de-plume
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+  syncPolicy:
+    automated:
+      prune: true
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
   name: url-shortener
   namespace: argocd
   finalizers:

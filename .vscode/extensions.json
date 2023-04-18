@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "codecontemplator.kubeseal",
+    "editorconfig.editorconfig",
+    "hashicorp.terraform",
+    "ms-kubernetes-tools.vscode-kubernetes-tools"
+  ]
+}
