@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nom-de-plume
+spec:
+  selector:
+    matchLabels:
+      app: nom-de-plume
+  template:
+    metadata:
+      labels:
+        app: nom-de-plume
+    spec:
+      containers:
+        - name: nom-de-plume
+          image: vendittelli/nom-de-plume:1.2.0
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
