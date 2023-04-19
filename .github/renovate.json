@@ -7,5 +7,8 @@
     ":semanticCommitTypeAll(chore)"
   ],
   "labels": ["dependencies"],
-  "dependencyDashboardLabels": ["dependencies"]
+  "dependencyDashboardLabels": ["dependencies"],
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  }
 }
