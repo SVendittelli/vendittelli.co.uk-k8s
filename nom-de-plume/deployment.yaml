@@ -18,6 +18,10 @@ spec:
             - secretRef:
                 name: nom-de-plume
           resources:
-            limits:
+            requests:
               memory: "128Mi"
-              cpu: "500m"
+              cpu: "250m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+  revisionHistoryLimit: 0
