@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
         - name: nom-de-plume
-          image: vendittelli/nom-de-plume:1.4.0@sha256:a47277fa6891736fa0e39e6c1d252829f5d7919edf0ad17a5048e17ac37bd821
+          image: vendittelli/nom-de-plume:1.4.1@sha256:7ad6038b536b06fc922e99e961312e952205beff29b9da2f59a9db862d7c3540
           envFrom:
             - secretRef:
                 name: nom-de-plume
