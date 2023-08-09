@@ -5,7 +5,7 @@
  */
 
 terraform {
-  required_version = "1.5.3"
+  required_version = "1.5.5"
 
   required_providers {
     helm = {
